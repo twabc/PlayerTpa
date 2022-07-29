@@ -1,0 +1,13 @@
+name: PlayerTpa
+version: '${project.version}'
+main: playertpa.playertpa.PlayerTpa
+api-version: 1.18
+authors: [ tw_abc ]
+commands:
+  tpa:
+  tpno:
+  tpyes:
+  tpcancel:
+  tpdeny:
+  tpaccept:
+
