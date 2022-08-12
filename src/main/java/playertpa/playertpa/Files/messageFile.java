@@ -1,4 +1,4 @@
-package playertpa.playertpa.command;
+package playertpa.playertpa.Files;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,14 +11,14 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import playertpa.playertpa.PlayerTpa;
 
-public class file {
+public class messageFile {
 
     private PlayerTpa plugin;
-    private FileConfiguration messagefile = null;
+    private FileConfiguration messageFile = null;
     private File configFile = null;
 
 
-    public file(PlayerTpa plugin) {
+    public messageFile(PlayerTpa plugin) {
         this.plugin = plugin;
         saveDefaultConfig();
     }
@@ -27,23 +27,23 @@ public class file {
         if (this.configFile == null)
             this.configFile = new File(this.plugin.getDataFolder(), "message.yml");
 
-        this.messagefile = YamlConfiguration.loadConfiguration(this.configFile);
+        this.messageFile = YamlConfiguration.loadConfiguration(this.configFile);
 
         InputStream a = this.plugin.getResource("message.yml");
         if(a != null) {
             YamlConfiguration b = YamlConfiguration.loadConfiguration(new InputStreamReader(a));
-            this.messagefile.setDefaults(b);
+            this.messageFile.setDefaults(b);
         }
     }
 
     public FileConfiguration getConfig() {
-        if(this.messagefile == null)
+        if(this.messageFile == null)
             reloadConfig();
-        return this.messagefile;
+        return this.messageFile;
     }
 
     public void saveConfig() {
-        if(this.messagefile == null || this.configFile == null)
+        if(this.messageFile == null || this.configFile == null)
             return;
 
         try {
@@ -60,8 +60,5 @@ public class file {
         if(!this.configFile.exists()) {
             this.plugin.saveResource("message.yml", false);
         }
-
     }
-
-
 }
