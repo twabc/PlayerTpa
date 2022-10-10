@@ -1,0 +1,6 @@
+Delay:
+  enabled: true
+  second: 3
+  message: false
+  title: false
+  actionbar: true

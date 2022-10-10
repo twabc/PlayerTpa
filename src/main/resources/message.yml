@@ -1,21 +1,31 @@
 Prefix: "&#F2A2E8系統 &#F9B7FF»"
 
-Only-player-can-use-this-command: "{Prefix} &b只有玩家可以使用此指令"
-
 Command-tutorial:
-  - "&#50C878&m---------&#3EB489&l玩家傳送&#50C878&m---------"
+  - "&#736AFF&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬"
   - "1&f. &#82CAFF/tpa <玩家> &f- &#FAF884發送傳送請求給指定玩家"
-  - "2&f. &#82CAFF/tpcancel &f- &#FAF884收回已發送的傳送請求"
-  - "3&f. &#82CAFF/tpyes &f- &#FAF884接受其他玩家傳送請求"
-  - "4&f. &#82CAFF/tpaccept &f- &#FAF884接受其他玩家傳送請求"
-  - "5&f. &#82CAFF/tpno &f- &#FAF884拒絕其他玩家傳送請求"
-  - "6&f. &#82CAFF/tpacancel &f- &#FAF884拒絕其他玩家傳送請求"
-  - "&#50C878&m-------------------------"
+  - "1&f. &#82CAFF/tpahere <玩家> &f- &#FAF884發送傳送請求給指定玩家"
+  - "3&f. &#82CAFF/tpacancel &f- &#FAF884收回已發送的傳送請求"
+  - "4&f. &#82CAFF/tpyes &f- &#FAF884接受其他玩家傳送請求"
+  - "5&f. &#82CAFF/tpaccept &f- &#FAF884接受其他玩家傳送請求"
+  - "6&f. &#82CAFF/tpno &f- &#FAF884拒絕其他玩家傳送請求"
+  - "7&f. &#82CAFF/tpdeny &f- &#FAF884拒絕其他玩家傳送請求"
+  - "8&f. &#82CAFF/tpa help &f- &#FAF884查看指令教學列表"
+  - "&#736AFF&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬"
+
+#權限節點: PlayerTpa.admin
+Admin-command-tutorial:
+  - "&#736AFF&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬"
+  - "1&f. &#82CAFF/tpa admin reload &f- &#FAF884重製伺服器資料夾"
+  - "2&f. &#82CAFF/tpa admin help &f- &#FAF884查看管理員指令教學列表"
+  - "&#736AFF&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬"
+
+Admin-message:
+  reload-file: "{Prefix} &#87CEFA成功重製伺服器資料夾"
 
 Sender:
-  not-online: "{Prefix} &#87CEFA此玩家不在線上"
+  not-online: "{Prefix} &#87CEFA此玩家不在線上或不存在"
   teleport-to-myself: "{Prefix} &#87CEFA你不能傳送自己"
-  already-has-pending-requests: "{Prefix} &#87CEFA你已經有一個代處理的傳送請求"
+  already-has-pending-requests: "{Prefix} &#87CEFA你已經發送了傳送請求給&#50C878{Player}"
   did-not-receive-any-requests: "{Prefix} &#87CEFA你沒有收到任何傳送請求"
   successful-send-request: "{Prefix} &#87CEFA成功發送傳送請求給&#50C878{Player}"
   successful-retract-request: "{Prefix} &#87CEFA成功收回傳送請求"
@@ -24,7 +34,9 @@ Sender:
   request-outdated: "{Prefix} &#87CEFA發送給&#50C878{Player}&#87CEFA的傳送請求已過期"
 
 Receiver:
-  receives-request: "{Prefix} &#50C878{Player}&#87CEFA發送了傳送請求給你&7(&#46C7C75分鐘後過期&7)"
+  tpa-receives-request: "{Prefix} &#50C878{Player}&#87CEFA請求傳送到你所在的位置&7(&#46C7C75分鐘後過期&7)"
+  tpahere-receives-request: "{Prefix} &#50C878{Player}&#87CEFA請求你傳送到他所在的位置&7(&#46C7C75分鐘後過期&7)"
+  sender-retract-request: "{Prefix} &#50C878{Player}&#87CEFA收回了傳送請求"
   accept-request: "{Prefix} &#87CEFA成功接受了傳送請求"
   deny-request: "{Prefix} &#87CEFA成功拒絕了傳送請求"
 
@@ -32,3 +44,9 @@ Click-button:
   accept: "&#00CED1[接受]"
   deny: "&#FF2400[拒絕]"
   cancel: "&#50C878[收回]"
+
+Delay-message:
+  message: "{Prefix} &#87CEFA剩餘時間&f: &#50C878{second}&#87CEFA秒"
+  title: "&#87CEFA剩餘時間&f: &#50C878{second}"
+  subtitle: "&#87CEFA剩餘時間&f: &#50C878{second}"
+  actionbar: "&#87CEFA剩餘時間&f: &#50C878{second}"

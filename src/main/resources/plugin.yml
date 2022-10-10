@@ -5,9 +5,10 @@ api-version: 1.18
 authors: [ tw_abc ]
 commands:
   tpa:
+  tpahere:
   tpno:
   tpyes:
-  tpcancel:
+  tpacancel:
   tpdeny:
   tpaccept:
 
